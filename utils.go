@@ -9,17 +9,14 @@ import (
 	"strings"
 )
 
-// HACK: 取得したpathだと開けなかったのでハードコートした
-// const ghqRoot = "/home/coma/ghq"
-
 func ghqRoot() string {
 	out, err := exec.Command("ghq", "root").Output()
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	return strings.Replace(string(out), "\n", "",  -1)
-  
+	return strings.Replace(string(out), "\n", "", -1)
+
 }
 
 func ghqPath() string {
@@ -59,7 +56,7 @@ func repoList(path string) []string {
 }
 
 func READMEContent(name string) string {
-  // TODO: READMEが含まれる文字列にしないとAsciiDocなどが表示されないので修正する
+	// TODO: READMEが含まれる文字列にしないとAsciiDocなどが表示されないので修正する
 	READMEPath := filepath.Join(name, "README.md")
 
 	f, err := os.Open(READMEPath)
@@ -71,8 +68,8 @@ func READMEContent(name string) string {
 	text, err := ioutil.ReadAll(f)
 	if err != nil {
 		log.Fatal(err)
-	return string(text)
-  }
+		return string(text)
+	}
 	return string(text)
 }
 

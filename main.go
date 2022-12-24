@@ -22,7 +22,7 @@ func tp() {
 }
 
 func main() {
-  root := ghqRoot()
+	root := ghqRoot()
 	repoPaths := ghqList()
 
 	var repos = []Repo{}
@@ -45,9 +45,9 @@ func main() {
 			return repos[i].name
 		},
 		fuzzyfinder.WithPreviewWindow(func(i, w, h int) string {
-      if i == -1 {
-        return ""
-      }
+			if i == -1 {
+				return ""
+			}
 			return fmt.Sprintf("Name: %s\n\n%s",
 				repos[i].name, repos[i].readme)
 		}))
