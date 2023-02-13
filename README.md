@@ -27,7 +27,8 @@ The repository picker
 
 ## 🚀 How to use
 
-> **New Feature!**
+> **Note**
+> New Feature!!
 > if you select `sandbox` repository, recker launch with
 > fuzzy-finder in `sandbox` repository again.
 
