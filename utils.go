@@ -16,7 +16,6 @@ func ghqRoot() string {
 	}
 
 	return strings.Replace(string(out), "\n", "", -1)
-
 }
 
 func ghqPath() string {
@@ -57,7 +56,7 @@ func repoList(path string) []string {
 
 func READMEContent(name string) string {
 	// TODO: READMEが含まれる文字列にしないとAsciiDocなどが表示されないので修正する
-	READMEPath := filepath.Join(name, "README.md")
+	READMEPath := filepath.Join(ghqRoot(), name, "README.md")
 
 	f, err := os.Open(READMEPath)
 	if err != nil {
@@ -78,4 +77,25 @@ func cd(path string) {
 	if err != nil {
 		log.Fatal(err)
 	}
+}
+
+func sandboxList(fullPath string) []string {
+	var fileList []string
+	files, err := filepath.Glob(filepath.Join(fullPath + "/*"))
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	for _, file := range files {
+		info, err := os.Stat(file)
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		if info.IsDir() && info.Name() != ".git" {
+			fileList = append(fileList, file)
+		}
+
+	}
+	return fileList
 }
