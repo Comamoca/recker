@@ -25,6 +25,9 @@ ghqを用いたリポジトリピッカー
 
 </div>
 
+> **新機能!!**
+> `sandbox`リポジトリを選択した場合、`sandbox`内のディレクトリで再びファジーファインダーを開きます。
+
 ## 🚀 使い方
 
 ghqに依存しています。[ghq](https://github.com/x-motemen/ghq)
@@ -34,15 +37,16 @@ go build
 ./recker
 ```
 
-## ⬇️  Install
+## ⬇️ Install
 
 任意のPATH上にバイナリを配置してください。
 
-## ⛏️   開発
+## ⛏️ 開発
 
 ```sh
 go run .
 ```
+
 ## 📝 Todo
 
 - [ ] TODOの修整

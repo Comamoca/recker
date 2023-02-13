@@ -27,22 +27,37 @@ The repository picker
 
 ## 🚀 How to use
 
+> **New Feature!**
+> if you select `sandbox` repository, recker launch with
+> fuzzy-finder in `sandbox` repository again.
+
 require [ghq](https://github.com/x-motemen/ghq)
 
 ```
+# out put selected repo path
+recker
+
+# move to selected repo path
+cd $(recker)
+```
+
+## ⬇️ Install
+
+build binary
+
+```sh
 go build
 ./recker
 ```
 
-## ⬇️  Install
+and move to on your path.
 
-move to on your path.
-
-## ⛏️    Development
+## ⛏️ Development
 
 ```sh
 go run .
 ```
+
 ## 📝 Todo
 
 - [ ] fix TODOs
