@@ -25,7 +25,7 @@ func main() {
 	root := ghqRoot()
 	repoPaths := ghqList()
 
-	var repos = []Repo{}
+	repos := []Repo{}
 
 	for _, path := range repoPaths {
 		realPath := filepath.Join(root, path)
@@ -51,11 +51,7 @@ func main() {
 			return fmt.Sprintf("Name: %s\n\n%s",
 				repos[i].name, repos[i].readme)
 		}))
-
 	if err != nil {
 	}
 	fmt.Println(filepath.Join(ghqRoot(), repos[idx].path))
-}
-
-func launchFuzzy() {
 }
