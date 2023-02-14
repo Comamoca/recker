@@ -64,12 +64,8 @@ func main() {
 						return ""
 					}
 
-					if i == 0 {
-						return ""
-					}
-
 					return fmt.Sprintf("Name: %s\n\n%s",
-						repos[i].name, repos[i].readme)
+						list[i].name, list[i].readme)
 				}))
 			if err != nil {
 			}
